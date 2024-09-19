@@ -1,9 +1,6 @@
 # 文章同步助手
 
-![](https://img.shields.io/github/v/release/wechatsync/Wechatsync.svg)
-![](https://img.shields.io/github/last-commit/wechatsync/Wechatsync)
-![](https://img.shields.io/github/issues/wechatsync/Wechatsync)
-
+还在为wechatsync好几年不更新和维护发愁么？试试这个吧
 还在为一次编辑，N 个平台需多次排版上传脑壳疼吧？
 为广大自媒体朋友撸了个提高生产力的小工具、可以做到的在多个内容平台无缝同步。
 
@@ -47,7 +44,6 @@
 | WordPress    | 开源CMS | 已支持 | https://cn.wordpress.org/         | HTML          | 2021/3/17 |
 | 搜狐焦点         | 房地产   | 已支持 | https://house.focus.cn/           | HTML          | 2021/3/17 |
 
-- [待支持的平台列表](https://airtable.com/shrLSJMnTC2BlmP29)
 
 ### 兼容发布API 
 你也可以通过兼容wordpress xmlrpc协议来使你的网站支持使用文章同步助手来同步
@@ -57,11 +53,10 @@
 
 ## 网页发起同步任务
 如果你是文章编辑器开发者，或自己有内容库需要同步多个渠道，引入这个JS SDK:  
-https://github.com/wechatsync/article-syncjs
+(article-syncjs)
 - window.syncPost(article) 拉起同步任务框
 
 ## 贡献代码
-- [待支持的平台列表](https://airtable.com/shrLSJMnTC2BlmP29)
 - [API文档](API.md)
 - [如何开发一个适配器](docs/toturial.md)
 
@@ -101,21 +96,11 @@ https://github.com/wechatsync/article-syncjs
 ![](snapshots/pub.png)
 
 ## 背景
-
-早在几年前，同事就在为 WordPress 和微信公众号之间不同排版而烦恼，每次都是两边重复排版一遍。
-2016 年的时候给他写了个爬虫，基于搜狗+打码平台+抓取内容，自动上传图片到 WordPress 博客。
-最后他只需要专注于公众号这边的内容发布即可！
-
-但是最近这个方案有点问题了，修起来也麻烦。
-
-于是便有了这个基于浏览器插件的方案，所有信息都存储在本地。
-不同于简媒、OpenWrite 之类基于云端的一键发布方案，免去了 Cookie 可能被盗用的安全风险。
-相比 artipub 需要自己部署安装的方案，也要方便很多
-
-https://www.v2ex.com/t/573320
+因为朋友项目需要，帮忙提升这个项目的稳定性。
 
 ## 更新日志
 
+集成之前作者的版本历史：
 ### 0.0.9
 
 - 今日头条同步失败更明确的提示

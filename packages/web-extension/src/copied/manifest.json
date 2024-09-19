@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "微信公众号同步助手",
+  "name": "微信公众号同步助手MD",
   "description": "微信公众号文章同步助手，支持头条号、简书、知乎、WordPress",
   "icons": {
     "16": "images/logo.png",
@@ -29,8 +29,16 @@
   ],
   "content_scripts": [
     {
-      "js": ["libs/juqery.js", "libs/Readability.js", "libs/reader.js", "page.js"],
-      "matches": ["http://*/*", "https://*/*"]
+      "js": [
+        "libs/juqery.js",
+        "libs/Readability.js",
+        "libs/reader.js",
+        "page.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
     },
     {
       "js": [
@@ -39,12 +47,20 @@
         "libs/bootstrap.min.js",
         "content.js"
       ],
-      "css": ["css/boot.css"],
-      "matches": ["http://mp.weixin.qq.com/*", "https://mp.weixin.qq.com/*"],
+      "css": [
+        "css/boot.css"
+      ],
+      "matches": [
+        "http://mp.weixin.qq.com/*",
+        "https://mp.weixin.qq.com/*"
+      ],
       "run_at": "document_end"
     },
     {
-      "js": ["libs/juqery.js", "api.js"],
+      "js": [
+        "libs/juqery.js",
+        "api.js"
+      ],
       "all_frames": true,
       "matches": [
         "http://*/*",
@@ -52,10 +68,17 @@
       ]
     },
     {
-      "js": ["libs/juqery.js", "segmenftfault.js"],
+      "js": [
+        "libs/juqery.js",
+        "segmenftfault.js"
+      ],
       "all_frames": true,
-      "matches": ["http://segmentfault.com/*", "https://segmentfault.com/*", "https://mp.toutiao.com/*",
-        "http://mp.toutiao.com/*"],
+      "matches": [
+        "http://segmentfault.com/*",
+        "https://segmentfault.com/*",
+        "https://mp.toutiao.com/*",
+        "http://mp.toutiao.com/*"
+      ],
       "run_at": "document_end"
     }
   ],
