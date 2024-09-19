@@ -1,17 +1,15 @@
 {
-  "manifest_version": 2,
-  "name": "微信公众号同步助手MD",
-  "description": "微信公众号文章同步助手，支持头条号、简书、知乎、WordPress",
+  "manifest_version": 3,
+  "name": "\u5fae\u4fe1\u516c\u4f17\u53f7\u540c\u6b65\u52a9\u624bMD",
+  "description": "\u5fae\u4fe1\u516c\u4f17\u53f7\u6587\u7ae0\u540c\u6b65\u52a9\u624b\uff0c\u652f\u6301\u5934\u6761\u53f7\u3001\u7b80\u4e66\u3001\u77e5\u4e4e\u3001WordPress",
   "icons": {
     "16": "images/logo.png",
     "48": "images/logo.png",
     "128": "images/logo.png"
   },
   "version": "1.0.12",
-  "content_security_policy": "script-src 'self' 'unsafe-eval' https://hm.baidu.com https://cdn.authing.cn https://cdn.jsdelivr.net https://www.google.com/ https://ajax.googleapis.com/; object-src 'self'",
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "index.html"
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
   },
   "options_ui": {
     "page": "index.html#/options",
@@ -23,9 +21,7 @@
     "webRequestBlocking",
     "storage",
     "unlimitedStorage",
-    "notifications",
-    "http://*/*",
-    "https://*/*"
+    "notifications"
   ],
   "content_scripts": [
     {
@@ -83,21 +79,28 @@
     }
   ],
   "web_accessible_resources": [
-    "view.html",
-    "templates.html",
-    "autoformat.js",
-    "inject.js",
-    "images/*"
+    {
+      "resources": [
+        "view.html",
+        "templates.html",
+        "autoformat.js",
+        "inject.js",
+        "images/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
   ],
   "background": {
-    "scripts": [
-      "libs/juqery.js",
-      "libs/jquery.xmlrpc.min.js",
-      "libs/aliyun-oss-sdk.min.js",
-      "libs/hmac-sha256.js",
-      "libs/enc-base64-min.js",
-      "libs/google-analytics-bundle.js",
-      "background.js"
-    ]
-  }
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "index.html"
+  },
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
 }

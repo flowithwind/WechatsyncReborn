@@ -12,6 +12,7 @@ import {
 
 var localDriver = require('./drivers/driver')
 
+console.log("in background.js, begin to set window.currentDriver")
 window.currentDriver = localDriver
 
 // index by tabId
@@ -122,7 +123,7 @@ var publicAccounts = []
 var db = new Store()
 window.db = db
 window.loadDriver = loadDriver
-console.log(window.db)
+console.log('background db created:', window.db)
 
 function getCookie(name, cookieStr) {
   let arr,
